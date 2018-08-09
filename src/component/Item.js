@@ -14,8 +14,6 @@ class Item extends Component {
   switchDetail() {
       
     this.setState(prevState => {
-
-        console.log(prevState)
       return { showDetail: !prevState.showDetail };
     });
   }
@@ -55,8 +53,12 @@ class Item extends Component {
 
         {this.state.showDetail ? (
           <p>
-            {this.props.detail}
-            <span>
+            title: {this.props.name}
+            <br />
+            description: {this.props.detail}
+
+            <br />
+            <span className="button-block">
               <button
                 className="button button-edit"
                 onClick={this.props.toEdit.bind(
@@ -70,7 +72,7 @@ class Item extends Component {
               </button>
             </span>
 
-            <span>
+            <span className="button-block">
               <button
                 className="button button-delete"
                 onClick={this.props.toDelete.bind(

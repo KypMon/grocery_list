@@ -8,8 +8,6 @@ class EditInput extends Component {
   constructor(props) {
     super(props);
 
-    console.log(props);
-
     this.state = {
       name: "",
       detail: ""
@@ -17,7 +15,6 @@ class EditInput extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-      console.log('update?')
     return nextProps !== this.state.name;
   }
 
@@ -49,8 +46,6 @@ class EditInput extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    console.log(this.state.name);
 
     axios
       .patch(`http://localhost:3004/list/${this.props.itemId}`, {

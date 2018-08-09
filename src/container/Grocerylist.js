@@ -52,8 +52,6 @@ class GroceryList extends Component {
   }
 
   onItemEdit(itemKey, itemName, itemDetail) {
-    console.log(itemKey, itemName, itemDetail);
-
     if(this.state.isEdit) {
       this.setState({
         isAdd: false,

@@ -31,5 +31,10 @@ span {
 }
 
 .item {
-    padding: 5px
+    padding: 5px;
+}
+
+.button-block {
+    display: inline-block;
+    margin: 10px;
 }

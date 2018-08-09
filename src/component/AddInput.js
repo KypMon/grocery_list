@@ -40,7 +40,6 @@ class AddInput extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="inputBox">
         <span>Item Title</span>

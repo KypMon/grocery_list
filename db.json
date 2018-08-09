@@ -1,12 +1,6 @@
 {
   "list": [
     {
-      "name": "Apple Pine",
-      "purchased": true,
-      "id": 1533826151967,
-      "detail": "50"
-    },
-    {
       "name": "pineapple",
       "purchased": false,
       "id": 1533833164894,
@@ -14,15 +8,15 @@
     },
     {
       "name": "chocolate",
-      "purchased": true,
+      "purchased": false,
       "id": 1533848118760,
       "detail": "123"
     },
     {
-      "name": "edit success!",
+      "name": "new item",
       "purchased": false,
-      "id": 1533848995863,
-      "detail": "no description"
+      "id": 1533852104229,
+      "detail": "hahahah"
     }
   ]
 }

@@ -50,9 +50,19 @@ class GroceryList extends Component {
     })
   }
 
-  onItemEdit(itemKey, itemName, itemDetail) {}
+  onItemEdit(itemKey, itemName, itemDetail) {
 
-  onItemDelete(itemName, itemKey) {}
+  }
+
+  onItemDelete(itemName, itemKey) {
+    let result = window.confirm(`Would you like to delete ${itemName}?`);
+
+    if (result) {
+      Axios.delete(`http://localhost:3004/list/${itemKey}`);
+      window.location.reload();
+    }
+
+  }
 
   componentDidMount() {
     Axios.get("http://localhost:3004/list").then(res => {

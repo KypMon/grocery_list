@@ -43,36 +43,16 @@ class GroceryList extends Component {
   }
 
   onItemComplete(itemKey, itemCompleted) {
-    // Axios.patch(`http://localhost:3004/list/${itemKey}`, {
-    //   purchased: !itemCompleted
-    // });
-
-    // window.location.reload();
+    Axios.patch(`http://localhost:3004/list/${itemKey}`, {
+      purchased: !itemCompleted
+    }).then(() => {
+      window.location.reload();
+    })
   }
 
-  onItemEdit(itemKey, itemName, itemDetail) {
-    // this.setState({
-    //   isAdd: false,
-    //   isEdit: true
-    // });
+  onItemEdit(itemKey, itemName, itemDetail) {}
 
-    // this.setState({
-    //   itemName: itemName,
-    //   itemKey: itemKey,
-    //   itemDetail: itemDetail
-    // });
-  }
-
-  onItemDelete(itemName, itemKey) {
-    // console.log(itemKey);
-
-    // let result = window.confirm(`Would you like to delete ${itemName}?`);
-
-    // if (result) {
-    //   Axios.delete(`http://localhost:3004/list/${itemKey}`);
-    //   window.location.reload();
-    // }
-  }
+  onItemDelete(itemName, itemKey) {}
 
   componentDidMount() {
     Axios.get("http://localhost:3004/list").then(res => {
@@ -107,11 +87,11 @@ class GroceryList extends Component {
           ""
         )}
 
-        <List 
-        items={this.state.items} 
-        complete={this.onItemComplete.bind(this)}
-        edit={this.onItemEdit.bind(this)}
-        delete={this.onItemDelete.bind(this)}
+        <List
+          items={this.state.items}
+          complete={this.onItemComplete.bind(this)}
+          edit={this.onItemEdit.bind(this)}
+          delete={this.onItemDelete.bind(this)}
         />
       </Auxiliary>
     );

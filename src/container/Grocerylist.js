@@ -5,6 +5,7 @@ import Auxiliary from "../hoc/Auxiliary";
 
 import List from "../component/List";
 import AddInput from "../component/AddInput";
+import EditInput from "../component/EditInput";
 
 import "./GroceryList.css";
 
@@ -47,11 +48,29 @@ class GroceryList extends Component {
       purchased: !itemCompleted
     }).then(() => {
       window.location.reload();
-    })
+    });
   }
 
   onItemEdit(itemKey, itemName, itemDetail) {
+    console.log(itemKey, itemName, itemDetail);
 
+    if(this.state.isEdit) {
+      this.setState({
+        isAdd: false,
+        isEdit: false,
+        itemName: itemName,
+        itemKey: itemKey,
+        itemDetail: itemDetail
+      });
+    } else {
+      this.setState({
+        isAdd: false,
+        isEdit: true,
+        itemName: itemName,
+        itemKey: itemKey,
+        itemDetail: itemDetail
+      });
+    }
   }
 
   onItemDelete(itemName, itemKey) {
@@ -61,7 +80,6 @@ class GroceryList extends Component {
       Axios.delete(`http://localhost:3004/list/${itemKey}`);
       window.location.reload();
     }
-
   }
 
   componentDidMount() {
@@ -79,23 +97,43 @@ class GroceryList extends Component {
           <h1 className="App-title">Grocery List</h1>
         </header>
 
-        <button className="add-button" onClick={this.switchToAdd.bind(this)}>
-          Add new item
-        </button>
-
         {this.state.isAdd ? (
           <div>
-            <AddInput />
-            <button
-              onClick={this.cancelEdit.bind(this)}
-              className="cancel-button"
-            >
-              Cancel Add
-            </button>
+            <AddInput>
+              <button
+                onClick={this.cancelEdit.bind(this)}
+                className="form-button"
+              >
+                Cancel Add
+              </button>
+            </AddInput>
           </div>
         ) : (
           ""
         )}
+
+        {this.state.isEdit ? (
+          <div>
+            <EditInput
+              itemName={this.state.itemName}
+              itemId={this.state.itemKey}
+              itemDetail={this.state.itemDetail}
+            >
+              <button
+                className="form-button"
+                onClick={this.cancelEdit.bind(this)}
+              >
+                Cancel Edit
+              </button>
+            </EditInput>
+          </div>
+        ) : (
+          ""
+        )}
+
+        <button className="add-button" onClick={this.switchToAdd.bind(this)}>
+          Add new item
+        </button>
 
         <List
           items={this.state.items}

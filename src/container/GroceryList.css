@@ -1,23 +1,25 @@
 .App-header {
   background-color: #222;
   height: 50px;
-  padding: 20px;
+  padding: 30px;
   color: white;
 }
 
 .App-title {
-  font-size: 2em;
+  font-size: 40px;
   font-family: fantasy
 }
 
 .add-button {
-  background-color: #555555;
+  background-color: #3c3c3c;
   border: none;
   color: white;
-  padding: 5px;
-  margin: 5px 0 0 0;
+  padding: 5px 10px 5px 10px;
+  margin: 15px;
   width: 40%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 24px;
 }

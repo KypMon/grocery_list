@@ -50,6 +50,7 @@ class AddInput extends Component {
           value={this.state.name}
           onChange={this.onChangeNameHandler.bind(this)}
           placeholder="item title"
+          className="text-input"
         />
 
         <span>Item detail</span>
@@ -58,11 +59,14 @@ class AddInput extends Component {
           value={this.state.detail}
           onChange={this.onChangeDetailHandler.bind(this)}
           placeholder="Detail"
+          className="text-input"
         />
 
         <br />
 
-        <button onClick={this.onAddNewItemHandler.bind(this)}>Add!</button>
+        <button onClick={this.onAddNewItemHandler.bind(this)} className="form-button">Add!</button>
+
+        {this.props.children}
       </div>
     );
   }

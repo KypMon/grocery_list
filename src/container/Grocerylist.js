@@ -42,6 +42,38 @@ class GroceryList extends Component {
     });
   }
 
+  onItemComplete(itemKey, itemCompleted) {
+    // Axios.patch(`http://localhost:3004/list/${itemKey}`, {
+    //   purchased: !itemCompleted
+    // });
+
+    // window.location.reload();
+  }
+
+  onItemEdit(itemKey, itemName, itemDetail) {
+    // this.setState({
+    //   isAdd: false,
+    //   isEdit: true
+    // });
+
+    // this.setState({
+    //   itemName: itemName,
+    //   itemKey: itemKey,
+    //   itemDetail: itemDetail
+    // });
+  }
+
+  onItemDelete(itemName, itemKey) {
+    // console.log(itemKey);
+
+    // let result = window.confirm(`Would you like to delete ${itemName}?`);
+
+    // if (result) {
+    //   Axios.delete(`http://localhost:3004/list/${itemKey}`);
+    //   window.location.reload();
+    // }
+  }
+
   componentDidMount() {
     Axios.get("http://localhost:3004/list").then(res => {
       this.setState({
@@ -64,13 +96,23 @@ class GroceryList extends Component {
         {this.state.isAdd ? (
           <div>
             <AddInput />
-            <button onClick={this.cancelEdit.bind(this)} className="cancel-button" >Cancel Add</button>
+            <button
+              onClick={this.cancelEdit.bind(this)}
+              className="cancel-button"
+            >
+              Cancel Add
+            </button>
           </div>
         ) : (
           ""
         )}
 
-        <List items={this.state.items} />
+        <List 
+        items={this.state.items} 
+        complete={this.onItemComplete.bind(this)}
+        edit={this.onItemEdit.bind(this)}
+        delete={this.onItemDelete.bind(this)}
+        />
       </Auxiliary>
     );
   }

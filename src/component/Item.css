@@ -1,0 +1,35 @@
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+span {
+    padding: 5px 5px
+}
+
+.button-complete {
+    background-color: #4CAF50; /* Green */
+}
+
+.button-edit {
+    background-color: #008CBA;
+    padding: 5px 12px;
+}
+
+.button-delete {
+    background-color: #f44336;
+    padding: 5px 12px;
+}
+
+.button-detail {
+    background-color: #e7e7e7;
+}
+
+.item {
+    padding: 5px
+}

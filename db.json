@@ -11,6 +11,12 @@
       "purchased": false,
       "id": 1533833164894,
       "detail": "2"
+    },
+    {
+      "name": "chocolate",
+      "purchased": false,
+      "id": 1533833955325,
+      "detail": "20g"
     }
   ]
 }

@@ -2,6 +2,8 @@ import React from 'react'
 
 import Item from './Item';
 
+import './List.css';
+
 export const List = (props) => {
 
     const items = props.items.map((item, index) => {

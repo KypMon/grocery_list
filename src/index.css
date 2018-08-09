@@ -10,6 +10,26 @@ body {
 }
 
 
-.App-intro {
-  font-size: large;
+.add-button {
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 5px;
+  margin: 5px 0 0 0;
+  width: 40%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cancel-button {
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 5px;
+  margin: 5px 0 0 0;
+  width: 20%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }

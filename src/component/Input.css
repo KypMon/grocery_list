@@ -1,0 +1,16 @@
+.inputBox input, .inputBox button {
+    padding: 5px;
+    margin: 20px;
+    
+}
+
+.inputBox button {
+    background-color: #555555;
+    border: none;
+    color: white;
+    margin: 5px 0 0 0;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
